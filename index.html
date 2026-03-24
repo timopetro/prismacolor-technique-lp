@@ -150,38 +150,44 @@
       height: 100%;
       object-fit: cover;
     }
-    .hero-overlay {
+    /* ── OVERCOME FEAR — hero copy section ───────────────────── */
+    .overcome-fear {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .overcome-fear img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      min-height: 180px;
+    }
+    .overcome-fear-content {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-end;
-      padding-bottom: 10%;
+      justify-content: center;
       text-align: center;
-      color: #fff;
-      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+      padding: 24px 20px;
+      color: #111;
     }
-    .hero-overlay h1 {
+    .overcome-fear-content h1 {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: clamp(28px, 4vw, 60px);
-      letter-spacing: 1px;
+      font-size: clamp(26px, 3.5vw, 52px);
       text-transform: uppercase;
+      letter-spacing: 1px;
       line-height: 1.05;
-      max-width: 700px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      color: #111;
     }
-    .hero-overlay p {
-      margin-top: 14px;
-      font-size: clamp(13px, 1.4vw, 18px);
-      font-weight: 400;
-      max-width: 480px;
-      line-height: 1.5;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-    }
-    .hero-overlay .btn {
-      margin-top: 24px;
+    .overcome-fear-content p {
+      font-size: clamp(13px, 1.3vw, 17px);
+      color: #444;
+      margin: 12px 0 20px;
+      max-width: 440px;
+      line-height: 1.55;
     }
 
     /* ── KITS / TABS SECTION ──────────────────────────────────── */
@@ -366,8 +372,9 @@
       flex-direction: column;
       justify-content: center;
       padding: 40px 8% 40px 8%;
-      max-width: 560px;
+      max-width: 580px;
       color: #111;
+      overflow: hidden;
     }
     .feature-eyebrow {
       font-family: 'Barlow Condensed', sans-serif;
@@ -556,6 +563,16 @@
     .slim-banner-overlay .btn {
       margin-top: 16px;
     }
+    /* carousel text scrim for readability */
+    .feature-slide-content::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(255,255,255,0.88) 55%, transparent 90%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .feature-slide-content > * { position: relative; z-index: 1; }
 
     /* ── EMAIL SIGNUP ─────────────────────────────────────────── */
     .email-section {
@@ -846,12 +863,20 @@
       alt="Prismacolor Technique — mobile hero"
       aria-hidden="true"
     />
-    <div class="hero-overlay">
+  </section>
+
+  <!-- ── OVERCOME FEAR — headline copy section ─────────────────── -->
+  <div class="overcome-fear" id="overcome-fear">
+    <img
+      src="assets/images/Prismacolor_Technique_Slim_Banner_Desktop_OvercomeFear.jpg"
+      alt="Colorful Prismacolor pencils"
+    />
+    <div class="overcome-fear-content">
       <h1>Overcome Your Fear<br>of the Blank Page</h1>
       <p>Build skills and confidence with digital lessons paired with art supplies.</p>
-      <a href="#kits" class="btn btn-white">Explore</a>
+      <a href="#kits" class="btn btn-dark">Explore</a>
     </div>
-  </section>
+  </div>
 
   <!-- ── KITS / TABS ────────────────────────────────────────────── -->
   <section class="kits-section" id="kits" aria-label="Available Prismacolor Technique Kits">
@@ -1098,17 +1123,6 @@
     </div>
   </section>
 
-  <!-- ── OVERCOME FEAR slim banner ─────────────────────────────── -->
-  <div class="slim-banner">
-    <img
-      src="assets/images/Prismacolor_Technique_Slim_Banner_Desktop_OvercomeFear.jpg"
-      alt="Overcome your fear of the blank page — Prismacolor colored pencils"
-    />
-    <div class="slim-banner-overlay">
-      <h2>Overcome Your Fear<br>of the Blank Page</h2>
-    </div>
-  </div>
-
   <!-- ── FIND YOUR STARTING POINT ──────────────────────────────── -->
   <section class="starting-point" aria-label="Find Your Starting Point">
     <h2>Find Your<br>Starting Point!</h2>
@@ -1165,15 +1179,12 @@
     </div>
   </section>
 
-  <!-- ── LEARN FROM HOME slim banner ───────────────────────────── -->
+  <!-- ── LEARN FROM HOME slim banner (decorative) ─────────────── -->
   <div class="slim-banner">
     <img
       src="assets/images/Prismacolor_Technique_Slim_Banner_Desktop_LearnFromHome.jpg"
       alt="Learn from home — Prismacolor markers"
     />
-    <div class="slim-banner-overlay">
-      <h2>Learn from Home</h2>
-    </div>
   </div>
 
   <!-- ── SHOP slim banner ───────────────────────────────────────── -->
