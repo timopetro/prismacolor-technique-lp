@@ -352,30 +352,29 @@
     }
     .feature-slide {
       flex: 0 0 100%;
-      position: relative;
-      aspect-ratio: 16 / 6;
-      min-height: 320px;
-      overflow: hidden;
+      display: flex;
+      min-height: 380px;
     }
-    .feature-slide img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: right center;
-      z-index: 0;
-    }
-    .feature-slide-content {
-      position: absolute;
-      inset: 0;
+    .feature-text-col {
+      flex: 0 0 42%;
+      background: #fff;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 40px 8% 40px 8%;
-      max-width: 580px;
+      padding: 48px 5% 48px 8%;
+      border-right: 1px solid #e8e8e8;
       color: #111;
+    }
+    .feature-img-col {
+      flex: 1;
       overflow: hidden;
+    }
+    .feature-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
     .feature-eyebrow {
       font-family: 'Barlow Condensed', sans-serif;
@@ -389,18 +388,18 @@
     .features-section .section-heading {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: clamp(22px, 3vw, 42px);
+      font-size: clamp(22px, 2.8vw, 40px);
       text-transform: uppercase;
       line-height: 1.05;
       color: #111;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       letter-spacing: 1px;
     }
-    .feature-slide-content p {
+    .feature-text-col p {
       font-size: 14px;
       line-height: 1.65;
-      color: #333;
-      max-width: 380px;
+      color: #444;
+      max-width: 340px;
     }
     /* Carousel nav */
     .carousel-nav {
@@ -776,8 +775,8 @@
       .level-cards-grid { grid-template-columns: 1fr; max-width: 480px; }
       .ugc-grid { grid-template-columns: repeat(3, 1fr); }
       .footer-top { grid-template-columns: 1fr 1fr; }
-      .feature-slide { aspect-ratio: auto; min-height: 400px; }
-      .feature-slide img { object-position: right bottom; }
+      .feature-slide { min-height: 320px; }
+      .feature-text-col { flex: 0 0 50%; padding: 32px 4% 32px 5%; }
     }
     @media (max-width: 600px) {
       .site-nav { padding: 0 16px; }
@@ -792,7 +791,7 @@
       .ugc-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .feature-slide-content { padding: 24px 16px; }
+      .feature-text-col { padding: 24px 16px; flex: 0 0 55%; }
     }
     .hero-mobile { display: none; }
   </style>
@@ -1048,53 +1047,49 @@
 
         <!-- Slide 1: Get Inspired -->
         <div class="feature-slide">
-          <img
-            src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_Inspired.jpg"
-            alt="Get Inspired — a colorful sunrise art project"
-          />
-          <div class="feature-slide-content">
+          <div class="feature-text-col">
             <div class="feature-eyebrow">Everything You Need to Learn from Home</div>
             <h2 class="section-heading">Get Inspired</h2>
             <p>Each kit comes with its own unique art project to inspire and motivate you to learn.</p>
+          </div>
+          <div class="feature-img-col">
+            <img src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_Inspired.jpg" alt="Get Inspired — colorful art in progress" />
           </div>
         </div>
 
         <!-- Slide 2: Exclusive Lessons -->
         <div class="feature-slide">
-          <img
-            src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_ExclusiveLessons.jpg"
-            alt="Access Exclusive Digital Lessons"
-          />
-          <div class="feature-slide-content">
+          <div class="feature-text-col">
             <div class="feature-eyebrow">Everything You Need to Learn from Home</div>
             <h2 class="section-heading">Access Exclusive<br>Digital Lessons</h2>
             <p>Taught by Prismacolor artists, these lessons are available to watch at your own convenience.</p>
+          </div>
+          <div class="feature-img-col">
+            <img src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_ExclusiveLessons.jpg" alt="Access Exclusive Digital Lessons" />
           </div>
         </div>
 
         <!-- Slide 3: Art Supplies -->
         <div class="feature-slide">
-          <img
-            src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_ArtSupplies.jpg"
-            alt="High-quality art supplies"
-          />
-          <div class="feature-slide-content">
+          <div class="feature-text-col">
             <div class="feature-eyebrow">Everything You Need to Learn from Home</div>
             <h2 class="section-heading">Create with<br>High-Quality Art Supplies</h2>
             <p>The tools in each kit make learning art techniques easier for artists of every skill level.</p>
+          </div>
+          <div class="feature-img-col">
+            <img src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_ArtSupplies.jpg" alt="High-quality Prismacolor art supplies" />
           </div>
         </div>
 
         <!-- Slide 4: Share Your Work -->
         <div class="feature-slide">
-          <img
-            src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_Share-2.jpg"
-            alt="Share Your Work on social media"
-          />
-          <div class="feature-slide-content">
+          <div class="feature-text-col">
             <div class="feature-eyebrow">Everything You Need to Learn from Home</div>
             <h2 class="section-heading">Share Your Work</h2>
             <p>Tag #PrismacolorTechnique on Facebook, Instagram and Twitter to share your art and your own art tips.</p>
+          </div>
+          <div class="feature-img-col">
+            <img src="assets/images/Prismacolor_Technique_Medium_Hero_Banner_Desktop_Share-2.jpg" alt="Share your work on social media" />
           </div>
         </div>
 
