@@ -364,6 +364,7 @@
       height: 100%;
       object-fit: cover;
       object-position: right center;
+      z-index: 0;
     }
     .feature-slide-content {
       position: absolute;
@@ -563,16 +564,12 @@
     .slim-banner-overlay .btn {
       margin-top: 16px;
     }
-    /* carousel text scrim for readability */
-    .feature-slide-content::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(255,255,255,0.88) 55%, transparent 90%);
-      z-index: 0;
-      pointer-events: none;
+    /* carousel text panel — solid white left column */
+    .feature-slide-content {
+      background: rgba(255,255,255,0.96);
+      border-right: 1px solid rgba(0,0,0,0.06);
     }
-    .feature-slide-content > * { position: relative; z-index: 1; }
+    .feature-slide-content::before { display: none; }
 
     /* ── EMAIL SIGNUP ─────────────────────────────────────────── */
     .email-section {
